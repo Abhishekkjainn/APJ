@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-export default function ManageUsers() {
+export default function ManageUsers({ isLoading, setLoading }) {
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  //   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [popupOpen, setPopupOpen] = useState(false);
   const [formUsername, setFormUsername] = useState('');
@@ -13,6 +13,7 @@ export default function ManageUsers() {
 
   const fetchUsers = async () => {
     try {
+      setLoading(true);
       const response = await fetch('https://apjapi.vercel.app/getAllUsers');
       const data = await response.json();
       if (data.success) {
@@ -36,6 +37,7 @@ export default function ManageUsers() {
     e.preventDefault();
     setAddingUser(true);
     try {
+      setLoading(true);
       const response = await fetch(
         `https://apjapi.vercel.app/addUser/username=${formUsername}/password=${formPassword}/admin=${formIsAdmin}`
       );
@@ -54,6 +56,7 @@ export default function ManageUsers() {
       setToast('An error occurred while adding the user.');
     } finally {
       setAddingUser(false);
+      setLoading(false);
       setTimeout(() => setToast(''), 3000);
     }
   };
@@ -150,7 +153,7 @@ export default function ManageUsers() {
 
       {toast && <div className="manageusers-toast">{toast}</div>}
 
-      {loading ? (
+      {isLoading ? (
         <p className="manageusers-loading">Loading users...</p>
       ) : error ? (
         <p className="manageusers-error">{error}</p>

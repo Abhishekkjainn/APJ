@@ -7,12 +7,15 @@ import HomeScreen from './pages/homescreen';
 import UpdatePrices from './pages/updateprices';
 import AddProducts from './pages/addProducts';
 import ManageUsers from './pages/manageUsers';
+import Loading from './pages/loading';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('home');
+  const [isLoading, setLoading] = useState(false);
   return (
     <>
+      {isLoading && <Loading isLoading={isLoading} setLoading={setLoading} />}
       <Header setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
       <MenuPage
         setMenuOpen={setMenuOpen}
@@ -20,11 +23,24 @@ function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
-      {activeTab === 'home' && <HomeScreen />}
-      {activeTab === 'price' && <UpdatePrices />}
-      {activeTab === 'add' && <AddProducts />}
-      {activeTab === 'users' && <ManageUsers />}
-      <Bottombar activeTab={activeTab} setActiveTab={setActiveTab} />
+      {activeTab === 'home' && (
+        <HomeScreen isLoading={isLoading} setLoading={setLoading} />
+      )}
+      {activeTab === 'price' && (
+        <UpdatePrices isLoading={isLoading} setLoading={setLoading} />
+      )}
+      {activeTab === 'add' && (
+        <AddProducts isLoading={isLoading} setLoading={setLoading} />
+      )}
+      {activeTab === 'users' && (
+        <ManageUsers isLoading={isLoading} setLoading={setLoading} />
+      )}
+      <Bottombar
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        isLoading={isLoading}
+        setLoading={setLoading}
+      />
     </>
   );
 }
