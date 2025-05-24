@@ -4,6 +4,35 @@ body{
     font-family: "DM Sans", sans-serif;
 }
 
+/*Carousel*/
+.carousel{
+  width: 100%;
+  height: 25px;
+  background-color: #161616;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.carouselcircle{
+  width: 8px;
+  height: 8px;
+  background-color: gold;
+  border-radius: 50%;
+}
+.fincar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /*Header*/
 .header{
     width: 100%;
@@ -12,7 +41,7 @@ body{
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: 25px;
     right: 0;
     left: 0;
     z-index: 1000;

@@ -8,6 +8,7 @@ import UpdatePrices from './pages/updateprices';
 import AddProducts from './pages/addProducts';
 import ManageUsers from './pages/manageUsers';
 import Loading from './pages/loading';
+import Carousel from './pages/carousel';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ function App() {
   return (
     <>
       {isLoading && <Loading isLoading={isLoading} setLoading={setLoading} />}
+      <Carousel />
       <Header setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
       <MenuPage
         setMenuOpen={setMenuOpen}
