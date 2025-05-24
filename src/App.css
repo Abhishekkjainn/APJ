@@ -11,6 +11,12 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
 }
 .menu{
     height: 35px;
@@ -91,8 +97,11 @@ body{
     background-color: rgb(12, 12, 12);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 100; /* Ensure it appears above other elements */
-
+    z-index: 1001; /* Ensure it appears above other elements */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
   }
   .menuopen {
     transform: translateX(0%);
@@ -100,7 +109,38 @@ body{
   .menuclosed {
     transform: translateX(100%);
   }
-  
+  .menudiv{
+    width: 100%;
+    flex: 1;
+    background-color: grey;
+  }
+  .menuitems{
+    margin-top: 40px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .menuitem{
+    width: 80%;
+    height: 65px;
+    /* border-top: 1px solid rgba(128, 128, 128, 0.148); */
+    border-bottom: 1px solid rgba(128, 128, 128, 0.148);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .itemicon{
+    width: 16px;
+    margin-right:20px ;
+  }
+  .itemtag{
+    color: grey;
+    font-size: 16px;
+    font-weight: 600;
+  }
 
   /*Bottom Bar*/
   .bottombar {
@@ -145,4 +185,35 @@ body{
     font-size: 10px;
     margin-left: 6px;
     margin-right: 6px;
+  }
+
+  /*HOMESCREEN*/
+  .homeScreen{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+  }
+
+
+  /*UPDATEPRICES PAGE*/
+  .updatepricespage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: green;
+  }
+
+  /*ADD PRODUCTS PAGE*/
+  .addproductspage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
   }
