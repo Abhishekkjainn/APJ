@@ -19,7 +19,7 @@ export default defineConfig({
         name: 'APJ',
         short_name: 'APJ',
         description: 'APJ',
-        theme_color: '#ffffff',
+        theme_color: '#000000',
         icons: [
           {
             src: 'icon192x192.png',
