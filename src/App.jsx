@@ -6,6 +6,7 @@ import Header from './pages/header';
 import HomeScreen from './pages/homescreen';
 import UpdatePrices from './pages/updateprices';
 import AddProducts from './pages/addProducts';
+import ManageUsers from './pages/manageUsers';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ function App() {
       {activeTab === 'home' && <HomeScreen />}
       {activeTab === 'price' && <UpdatePrices />}
       {activeTab === 'add' && <AddProducts />}
-      {activeTab === 'users' && <UpdatePrices />}
+      {activeTab === 'users' && <ManageUsers />}
       <Bottombar activeTab={activeTab} setActiveTab={setActiveTab} />
     </>
   );
