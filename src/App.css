@@ -50,7 +50,7 @@ body{
 
 /*Menupage*/
 .menupage{
-    
+    position: fixed;
     width: 100%;
     height: 100vh;
     background-color: rgb(12, 12, 12);
@@ -82,19 +82,24 @@ body{
     font-size: 24px;
     margin-left: 30px;
 }
-.menuopen{
+.menupage {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    transition: 0.3s;
-}
-.menuclosed{
-    transition: 0.3s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: -100%;
-    bottom: 0;
-}
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(12, 12, 12);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100; /* Ensure it appears above other elements */
+
+  }
+  
+  .menuopen {
+    transform: translateX(0%);
+  }
+  
+  .menuclosed {
+    transform: translateX(100%);
+  }
+  

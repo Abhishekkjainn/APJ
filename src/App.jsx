@@ -1,9 +1,10 @@
-import { useState, useEffect, use } from 'react';
+import { useState } from 'react';
 import './App.css';
 import MenuPage from './pages/menupage';
 
 function App() {
-  const [menuOpen, isMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <div className="header">
@@ -16,11 +17,11 @@ function App() {
             src="/menu.png"
             alt=""
             className="menuicon"
-            onClick={() => isMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(!menuOpen)}
           />
         </div>
       </div>
-      <MenuPage isMenuOpen={isMenuOpen} menuOpen={menuOpen} />
+      <MenuPage setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
     </>
   );
 }

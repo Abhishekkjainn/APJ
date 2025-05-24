@@ -1,4 +1,4 @@
-export default function MenuPage({ isMenuOpen, menuOpen }) {
+export default function MenuPage({ setMenuOpen, menuOpen }) {
   return (
     <div className={`menupage ${menuOpen ? 'menuopen' : 'menuclosed'}`}>
       <div className="menutop">
@@ -8,7 +8,7 @@ export default function MenuPage({ isMenuOpen, menuOpen }) {
             src="/close.png"
             alt=""
             className="closeicon"
-            onClick={() => isMenuOpen(!menuOpen)}
+            onClick={() => setMenuOpen(false)}
           />
         </div>
       </div>
